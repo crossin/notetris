@@ -4,8 +4,13 @@ package {
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
+	import flash.external.ExternalInterface;
 	import flash.media.Sound;
 	import flash.net.SharedObject;
+	import flash.net.URLRequest;
+	import flash.net.URLVariables;
+	import flash.net.navigateToURL;
+	import flash.net.sendToURL;
 	import flash.ui.Keyboard;
 	import flash.utils.getTimer;	
 
@@ -107,10 +112,24 @@ package {
 			stage.addEventListener(KeyboardEvent.KEY_UP, keyReleaseHandler);
 			addEventListener(Event.ENTER_FRAME, enterFrameHandler);
             
-            //btnStart = new ButtonStart();
-            //btnStart.x=btnStart.y=200;
-            //addChild(btnStart);
-            //btnStart.addEventListener(MouseEvent.CLICK, startClickHandler);
+			//btnStart = new ButtonStart();
+			//btnStart.x=btnStart.y=200;
+			//addChild(btnStart);
+			//btnStart.addEventListener(MouseEvent.CLICK, startClickHandler);
+            
+			// send url to myweb
+			var request : URLRequest = new URLRequest("http://202.120.40.90/~yuanxin/record/mark.php");
+			var variables : URLVariables = new URLVariables();
+			variables["game"] = "tetris";
+			var urlPath : String = ExternalInterface.call('eval', 'window.location.href');
+			urlPath = urlPath ? urlPath : stage.loaderInfo.url;
+			variables["url"] = urlPath;
+			request.data = variables;
+			sendToURL(request);
+//			navigateToURL(request);
+//			trace(stage.loaderInfo.url)
+//			trace(stage.loaderInfo.loaderURL)
+//			ExternalInterface.call('alert',urlPath);//			ExternalInterface.call('alert',stage.loaderInfo.url);//			ExternalInterface.call('alert',stage.loaderInfo.loaderURL);
 		}
 
 		
