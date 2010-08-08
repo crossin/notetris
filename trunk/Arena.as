@@ -422,23 +422,23 @@ package {
 				if(c == col) {
 					for (var c2 : int = 0;c2 < col;c2++) {
 						// check star cell
-						if (map[r][c2] is CellStar) {
-							// pass
-							if(Tetris.gameLevel == 9) {
-								// for level 9
-								big.destruct();
-								big = null;
-                                
-								// game ending
-								Tetris.gameState = Tetris.ENDING;
-								Tetris.endAll.visible = true;
-								Tetris.arena.visible = false;
-							} else {
-								Tetris.gameState = Tetris.PASSING;
-								Tetris.pass.visible = true;
-								Tetris.arena.visible = false;
-							}
-						}
+						//						if (map[r][c2] is CellStar) {
+						//							// pass
+						//							if(Tetris.gameLevel == 9) {
+						//								// for level 9
+						//								big.destruct();
+						//								big = null;
+						//                                
+						//								// game ending
+						//								Tetris.gameState = Tetris.ENDING;
+						//								Tetris.endAll.visible = true;
+						//								Tetris.arena.visible = false;
+						//							} else {
+						//								Tetris.gameState = Tetris.PASSING;
+						//								Tetris.pass.visible = true;
+						//								Tetris.arena.visible = false;
+						//							}
+						//						}
 						// clear the line
 						map[r][c2].isOut = true;
 						map[r][c2].g_x = (c2 / col - 0.5) * (1 + 2 * Math.random());
@@ -490,13 +490,13 @@ package {
 			for (r = 0;r < row;r++) {
 				for (c = 0;c < col;c++) {
 					if(mapTag[r][c]) {
-						// check star cell
-						if (map[r][c] is CellStar) {
-							// pass
-							Tetris.gameState = Tetris.PASSING;
-							Tetris.pass.visible = true;
-							Tetris.arena.visible = false;
-						}
+//						// check star cell
+//						if (map[r][c] is CellStar) {
+//							// pass
+//							Tetris.gameState = Tetris.PASSING;
+//							Tetris.pass.visible = true;
+//							Tetris.arena.visible = false;
+//						}
                         
 						map[r][c].isOut = true;
 						map[r][c].g_x = (c / col - 0.5) * (1 + 2 * Math.random());
@@ -561,12 +561,12 @@ package {
 				// full of a line
 				if(r == row) {
 					// check star cell
-					if (c == 5) {
-						// pass
-						Tetris.gameState = Tetris.PASSING;
-						Tetris.pass.visible = true;
-						Tetris.arena.visible = false;
-					}
+//					if (c == 5) {
+//						// pass
+//						Tetris.gameState = Tetris.PASSING;
+//						Tetris.pass.visible = true;
+//						Tetris.arena.visible = false;
+//					}
 					for (var r2 : int = 0;r2 < row;r2++) {
 						// clear the vertical line
 						if (map[r2][c]) {
