@@ -23,9 +23,9 @@ package {
 					Tetris.savedData.flush();
 				}
 				if(Tetris.gameLevel == 9) {
-					// for level 9
-					Tetris.arena.big.destruct();
-					Tetris.arena.big = null;
+//					// for level 9
+//					Tetris.arena.big.destruct();
+//					Tetris.arena.big = null;
                                 
 					// game ending
 					Tetris.gameState = Tetris.ENDING;

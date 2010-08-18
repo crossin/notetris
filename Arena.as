@@ -355,7 +355,10 @@ package {
 			Tetris.blockNext.destruct();
 			Tetris.block = null;
 			Tetris.blockNext = null;
-            
+			if (Tetris.arena.big) {
+				Tetris.arena.big.destruct();
+				Tetris.arena.big = null;
+			}
 			this.graphics.clear();
 		}
 
@@ -490,14 +493,14 @@ package {
 			for (r = 0;r < row;r++) {
 				for (c = 0;c < col;c++) {
 					if(mapTag[r][c]) {
-//						// check star cell
-//						if (map[r][c] is CellStar) {
-//							// pass
-//							Tetris.gameState = Tetris.PASSING;
-//							Tetris.pass.visible = true;
-//							Tetris.arena.visible = false;
-//						}
-                        
+						//						// check star cell
+						//						if (map[r][c] is CellStar) {
+						//							// pass
+						//							Tetris.gameState = Tetris.PASSING;
+						//							Tetris.pass.visible = true;
+						//							Tetris.arena.visible = false;
+						//						}
+
 						map[r][c].isOut = true;
 						map[r][c].g_x = (c / col - 0.5) * (1 + 2 * Math.random());
 						map[r][c].g_y = 6 + 2 * Math.random();
@@ -561,12 +564,12 @@ package {
 				// full of a line
 				if(r == row) {
 					// check star cell
-//					if (c == 5) {
-//						// pass
-//						Tetris.gameState = Tetris.PASSING;
-//						Tetris.pass.visible = true;
-//						Tetris.arena.visible = false;
-//					}
+					//					if (c == 5) {
+					//						// pass
+					//						Tetris.gameState = Tetris.PASSING;
+					//						Tetris.pass.visible = true;
+					//						Tetris.arena.visible = false;
+					//					}
 					for (var r2 : int = 0;r2 < row;r2++) {
 						// clear the vertical line
 						if (map[r2][c]) {
