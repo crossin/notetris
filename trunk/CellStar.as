@@ -55,10 +55,16 @@ package {
 					// game ending
 					Tetris.gameState = Tetris.ENDING;
 					Tetris.endAll.visible = true;
+					Tetris.end.visible = false;
+					Tetris.pause.visible = false;					Tetris.info.visible = false;					Tetris.index.visible = false;
 					Tetris.arena.visible = false;
 				} else {
 					Tetris.gameState = Tetris.PASSING;
 					Tetris.pass.visible = true;
+					Tetris.end.visible = false;
+					Tetris.pause.visible = false;
+					Tetris.info.visible = false;
+					Tetris.index.visible = false;
 					Tetris.arena.visible = false;
 				}
 				destruct();

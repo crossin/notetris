@@ -311,10 +311,10 @@ package {
 			Tetris.info["cover"].mat.graphics.clear();
 			switch (Tetris.gameLevel) {
 				case 1:
-					Tetris.info["txtTip"].text = "第1关：没什么好提示的，和普通的俄罗斯方块一样。快去消掉钥匙方块吧！";
+					Tetris.info["txtTip"].text = "第1关：没什么好提示的，和普通的俄罗斯方块一样。快去消掉带星方块吧！";
 					break;
 				case 2:
-					Tetris.info["txtTip"].text = "第2关：再坚硬的铁球，也经不住重压。";
+					Tetris.info["txtTip"].text = "第2关：再坚硬的球，也经不住重压。";
 					break;
 				case 3:
 					Tetris.info["txtTip"].text = "第3关：保护工作自始至终都要做好哦~";
@@ -351,10 +351,12 @@ package {
 					Tetris.isPressDown = false;
 				}
 			}
-			Tetris.block.destruct();
-			Tetris.blockNext.destruct();
-			Tetris.block = null;
-			Tetris.blockNext = null;
+			if(Tetris.block && Tetris.blockNext) {
+				Tetris.block.destruct();
+				Tetris.blockNext.destruct();
+				Tetris.block = null;
+				Tetris.blockNext = null;
+			}
 			if (Tetris.arena.big) {
 				Tetris.arena.big.destruct();
 				Tetris.arena.big = null;
