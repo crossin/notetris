@@ -1,11 +1,11 @@
 package {
-    import flash.display.Sprite;
-    import flash.events.Event;    
+	import flash.display.MovieClip;
+	import flash.events.Event;    
 
-    /**
+	/**
      * @author user
      */
-    public class Bomb extends Sprite {
+    public class Bomb extends MovieClip {
         var g : int = 10;
         var posY : int;
 
