@@ -14,7 +14,7 @@ package {
 		static var startY : int = 30;
 		static var g : int = 5;
 		static var v : int = 15;
-		static var posNext : Point = new Point(300, 10);
+		static var posNext : Point = new Point(256, 54);
 		//        static var posHold : Point = new Point(320, 0);
 
 		var map : Array;
@@ -192,7 +192,7 @@ package {
 				//                map[row - 2][6].setPos(6 * Cell.length, (row - 2) * Cell.length);
 				//                addChild(map[row - 2][6]);
 
-				desc.text = "有什么不同？这不就是一般的俄罗斯方块吗";
+				desc.text = "有什么不同？这不就是一般的俄罗斯方块吗？";
 			}
             else if (Tetris.gameLevel == 2) {
 				// for level 2
@@ -241,7 +241,7 @@ package {
 				map[row - 2][6].index = "2";
 				addChild(map[row - 2][6]);
                 
-				desc.text = "。。。这难道是魔法方块吗。。。";
+				desc.text = "这难道是魔法方块吗……";
 			}
             else if (Tetris.gameLevel == 5) {
 				// for level 5
@@ -264,7 +264,7 @@ package {
 				map[row - 3][5].setPos(5 * Cell.length, (row - 3) * Cell.length);
 				addChild(map[row - 3][5]);
                 
-				desc.text = "换个角度看问题";
+				desc.text = "换个角度看问题。";
 			}
             else if (Tetris.gameLevel == 6) {
 				// for level 6
@@ -274,7 +274,7 @@ package {
 				this.graphics.moveTo(6 * Cell.length + 2, 10 * Cell.length + 2);
 				this.graphics.lineTo(col * Cell.length, 10 * Cell.length + 2);
                 
-				desc.text = "俄罗斯方块也是很需要微操的";
+				desc.text = "俄罗斯方块也是很需要微操的。";
 			}
             else if (Tetris.gameLevel == 7) {
 				// for level 7

@@ -118,14 +118,15 @@ package {
 			//btnStart.addEventListener(MouseEvent.CLICK, startClickHandler);
             
 			// send url to myweb
-			var request : URLRequest = new URLRequest("http://202.120.40.90/~yuanxin/record/mark.php");
+			var request1 : URLRequest = new URLRequest("http://202.120.40.90/~yuanxin/record/mark.php");			var request2 : URLRequest = new URLRequest("http://yuan-xin.appspot.com/record");
 			var variables : URLVariables = new URLVariables();
 			variables["game"] = "tetris";
 			var urlPath : String = ExternalInterface.call('eval', 'window.location.href');
 			urlPath = urlPath ? urlPath : stage.loaderInfo.url;
 			variables["url"] = urlPath;
-			request.data = variables;
-			sendToURL(request);
+			request1.data = variables;			request2.data = variables;
+			sendToURL(request1);			sendToURL(request2);
+			
 //			navigateToURL(request);
 //			trace(stage.loaderInfo.url)
 //			trace(stage.loaderInfo.loaderURL)
